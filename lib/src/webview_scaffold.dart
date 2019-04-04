@@ -16,6 +16,7 @@ class WebviewScaffold extends StatefulWidget {
   final bool primary;
   final List<Widget> persistentFooterButtons;
   final Widget bottomNavigationBar;
+  final Widget initialChild;
   final bool withZoom;
   final bool withLocalStorage;
   final bool withLocalUrl;
@@ -39,7 +40,7 @@ class WebviewScaffold extends StatefulWidget {
       this.withZoom,
       this.withLocalStorage,
       this.withLocalUrl,
-      this.scrollBar})
+      this.scrollBar, this.initialChild})
       : super(key: key);
 
   @override
@@ -95,7 +96,7 @@ class _WebviewScaffoldState extends State<WebviewScaffold> {
         appBar: widget.appBar,
         persistentFooterButtons: widget.persistentFooterButtons,
         bottomNavigationBar: widget.bottomNavigationBar,
-        body: const Center(child: const CircularProgressIndicator()));
+        body:widget.initialChild !=null?widget.initialChild: const Center(child: const CircularProgressIndicator()));
   }
 
   Rect _buildRect(BuildContext context) {
