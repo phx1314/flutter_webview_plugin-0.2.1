@@ -76,7 +76,7 @@ class WebviewManager {
 
     private class JsInterface {
         @JavascriptInterface
-        public void EmpSelectBegin(final String message) {
+        public void callBack(final String message) {
             Map<String, Object> data = new HashMap<>();
             data.put("json", message);
             FlutterWebviewPlugin.channel.invokeMethod("onChannel", data);
