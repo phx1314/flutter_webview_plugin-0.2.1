@@ -214,11 +214,11 @@ public class FlutterWebviewPlugin implements MethodCallHandler, PluginRegistry.A
         return (int) (dp * scale + 0.5f);
     }
 
-   //    @Override
-//    public boolean onActivityResult(int i, int i1, Intent intent) {
+ @Override
+    public boolean onActivityResult(int i, int i1, Intent intent) {
 //        if(webViewManager != null && webViewManager.resultHandler != null){
 //            return webViewManager.resultHandler.handleResult(i, i1, intent);
 //        }
-//        return false;
-//    }
+        return false;
+    }
 }
